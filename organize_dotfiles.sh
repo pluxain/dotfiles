@@ -6,7 +6,7 @@
 # Variables
 dir=~/dotfiles
 savedir=~/dotfiles_save
-files="vimrc bash_profile"
+files="vimrc bash_profile gitconfig"
 folders="vim"
 
 echo "Creating save directory $savedir for backup any existing dotfiles in home"
@@ -15,7 +15,7 @@ echo "$savedir created"
 
 # Moving files existing in $save_dir
 for file in $files; do
-	if [ -f .$file ]; then
+	if [ -f ~/.$file ]; then
 		echo "Moving .$file in $HOME to $savedir for backup"
 		mv ~/.$file $savedir/
 	fi
@@ -24,8 +24,8 @@ for file in $files; do
 done
 
 for folder in $folders; do
-	if [ -d .$folder ]; then
-		echo "Moving .$folder folder in $HOME to $savedir for backup"
+	if [ -d ~/.$folder ]; then
+		echo "Moving .$folder folder from $HOME to $savedir for backup"
 		mv ~/.$folder $savedir/
 	fi
 	echo "Creating symlin from $dir/$folder folder to $HOME/.$folder"

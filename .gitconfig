@@ -1,0 +1,10 @@
+[user]
+	name = Pascal Luxain
+	email = pl@luxain.pro
+[color]
+	ui = auto
+	diff = true
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff

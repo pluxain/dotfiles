@@ -16,14 +16,14 @@ if [ ! -d $savedir ]; then
 fi
 
 # Moving files existing in $save_dir
-#for file in $files; do
-#	if [ -f ~/.$file ]; then
-#		echo "Moving .$file in $HOME to $savedir for backup"
-#		mv ~/.$file $savedir/
-#	fi
-#	echo "Creating symlink from $dir/$file to $HOME/.$file"
-#	ln -s $dir/$file ~/.$file
-#done
+for file in $files; do
+	if [ -f ~/.$file ]; then
+		echo "Moving .$file in $HOME to $savedir for backup"
+		mv ~/.$file $savedir/
+	fi
+	echo "Creating symlink from $dir/$file to $HOME/.$file"
+	ln -s $dir/$file ~/.$file
+done
 
 for folder in $folders; do
 	if [ -d ~/.$folder ]; then

@@ -15,3 +15,5 @@ fi
 # Export prompt settings
 export PS1='\[\e[37m\]\u@\h:\[\e[34m\]\w$(__git_ps1 "\[\e[32m\] [%s]")\[\e[37m\]#\[\e[0m\]' 
 
+# Add Android SDK platform tools to path
+export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools

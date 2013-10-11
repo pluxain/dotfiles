@@ -1,0 +1,6 @@
+# example.com.local VirtualHost config file
+<VirtualHost *:80>
+    ServerAdmin pl@luxain.pro
+    DocumentRoot "/Users/pln/Sites/example.com/htdocs"
+    ServerName www.example.com.local
+</VirtualHost>

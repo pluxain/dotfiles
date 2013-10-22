@@ -19,3 +19,5 @@ export PS1='\[\e[37m\]\u@\h:\[\e[34m\]\w$(__git_ps1 "\[\e[32m\] [%s]")\[\e[37m\]
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
 # Add Path to MySQL install to enable mysql in terminal
 export PATH=${PATH}:/usr/local/mysql/bin
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -1,0 +1,6 @@
+# example.com.local VirtualHost config file
+<VirtualHost *:80>
+    ServerAdmin pl@luxain.pro
+    DocumentRoot "/Users/pln/Sites/tutorial.nanoc.local/output"
+    ServerName www.tutorial.nanoc.local
+</VirtualHost>

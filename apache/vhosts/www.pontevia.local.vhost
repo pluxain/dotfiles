@@ -2,5 +2,5 @@
 <VirtualHost *:80>
     ServerAdmin pl@luxain.pro
     DocumentRoot "/Users/pln/Sites/www.pontevia.local/htdocs"
-    ServerName dev.pontevia.local
+    ServerName www.pontevia.local
 </VirtualHost>

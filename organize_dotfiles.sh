@@ -6,7 +6,7 @@
 # Variables
 dir=~/dotfiles
 savedir=~/dotfiles_save/`date "+%s"`
-files="vimrc bash_profile gitconfig"
+files="vimrc bash_profile gitconfig bashrc zshrc"
 folders="vim"
 
 if [ ! -d $savedir ]; then

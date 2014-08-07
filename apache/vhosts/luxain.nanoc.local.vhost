@@ -1,0 +1,6 @@
+# sylvie-test.nanoc.local VirtualHost config file
+<VirtualHost *:80>
+    ServerAdmin pl@luxain.pro
+    DocumentRoot "/Users/pln/Sites/luxain.nanoc.local/htdocs"
+    ServerName www.luxain.nanoc.local
+</VirtualHost>

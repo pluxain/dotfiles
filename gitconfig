@@ -1,10 +1,11 @@
 [user]
-	name = Pascal Luxain
+	ame = Pascal Luxain
 	email = pl@luxain.pro
 [color]
 	ui = auto
 	diff = true
 [core]
 	editor = vim
+	autocrlf = input
 [diff]
 	tool = vimdiff

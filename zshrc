@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="eastwood"
+ZSH_THEME="ys"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,4 +45,6 @@ plugins=(git ruby history gem history-substring-search terminalapp brew nano)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Users/pln/.rvm/gems/ruby-1.9.3-p448/bin:/Users/pln/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/pln/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/pln/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Applications/Android Studio.app/sdk/platform-tools:/usr/local/mysql/bin
+# export PATH=/$HOME/.rvm/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Android\ Studio.app/sdk/platform-tools:/usr/local/mysql/bin:$PATH
+
+source ~/.bash_profile

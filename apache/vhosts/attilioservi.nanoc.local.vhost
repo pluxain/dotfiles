@@ -1,6 +1,0 @@
-# sylvie-test.nanoc.local VirtualHost config file
-<VirtualHost *:80>
-    ServerAdmin pl@luxain.pro
-    DocumentRoot "/Users/pln/Sites/attilioservi.nanoc.local/htdocs"
-    ServerName www.attilioservi.nanoc.local
-</VirtualHost>

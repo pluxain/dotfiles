@@ -18,12 +18,12 @@ vno <right> <Nop>
 
 " Custom mapping
 " Ctrl+j to move down a line
-no <C-j> ddp
+" no <C-j> ddp
 " Ctrl+k to move up a line
-no <C-k> ddkP
+" no <C-k> ddkP
 " Insert a blank line above the current line in normal mode
-no <S-Enter> O<Esc>
+" no <S-Enter> O<Esc>
 " Insert a blank line below the current line in normal mode
-no <CR> o<Esc>
+" no <CR> o<Esc>
 " Enter in Insert mode escapes to normal mode
-ino <Enter> <Esc>
+" ino <Enter> <Esc>

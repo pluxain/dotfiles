@@ -28,6 +28,11 @@ export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
 # Add Path to MySQL install to enable mysql in terminal
 export PATH=${PATH}:/usr/local/mysql/bin
 
+# Add Composer global dependencies (Laravel) to path
+export PATH=${PATH}:~/.composer/vendor/bin
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export YAKAMAILER_ENVIRONMENT=development
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home

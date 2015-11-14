@@ -3,7 +3,7 @@ set nocompatible
 
 " set color scheme
 " use xxx.vim color scheme in ~/.vim/colors/
-color blackboard " jellybeans
+color jellybeans
 
 " show the current line
 set cursorline
@@ -12,7 +12,7 @@ set cursorline
 set incsearch
 
 " do highlight words when searching for them. it's distracting.
-set hlsearch
+" set hlsearch
 
 " automatically show matching brackets. works like it does in bbedit.
 set showmatch

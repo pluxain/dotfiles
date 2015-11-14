@@ -40,7 +40,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby history gem history-substring-search terminalapp brew nano)
+plugins=(git history history-substring-search terminalapp brew nano atom wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,3 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=/$HOME/.rvm/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Android\ Studio.app/sdk/platform-tools:/usr/local/mysql/bin:$PATH
 
 source ~/.bash_profile
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+
+# OPAM configuration
+. /Users/pln/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

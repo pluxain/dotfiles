@@ -1,6 +1,6 @@
 [user]
-	ame = Pascal Luxain
 	email = pl@luxain.pro
+	name = Pascal Luxain
 [color]
 	ui = auto
 	diff = true
@@ -9,3 +9,7 @@
 	autocrlf = input
 [diff]
 	tool = vimdiff
+[push]
+	default = simple
+[pull]
+	default = simple

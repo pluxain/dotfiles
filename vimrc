@@ -33,7 +33,7 @@ set wildignore+=*/vendor/**
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " use xxx.vim color scheme in ~/.vim/colors/
-color sorcerer
+colorscheme sorcerer
 
 
 " show the current line

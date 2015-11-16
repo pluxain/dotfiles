@@ -20,13 +20,13 @@ fi
 # Export prompt settings
 # export PS1='\[\e[37m\]\u@\h:\[\e[34m\]\w$(__git_ps1 "\[\e[32m\] [%s]")\[\e[37m\]#\[\e[0m\]' 
 
-export PATH=/usr/local/bin:$(brew --prefix homebrew/php/php55)/bin:${PATH}
+# export PATH=/usr/local/bin:$(brew --prefix homebrew/php/php55)/bin:${PATH}
 
 # Add Android SDK platform tools to path
-export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
+# export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools
 
 # Add Path to MySQL install to enable mysql in terminal
-export PATH=${PATH}:/usr/local/mysql/bin
+# export PATH=${PATH}:/usr/local/mysql/bin
 
 # Add Composer global dependencies (Laravel) to path
 export PATH=${PATH}:~/.composer/vendor/bin

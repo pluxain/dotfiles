@@ -1,9 +1,40 @@
 " turn off compatibility with the old vi
 set nocompatible
+" Vundle set up
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" set color scheme
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'rking/ag.vim'
+Plugin 'stephpy/vim-php-cs-fixer'
+
+" Color schemes
+Plugin 'adlawson/vim-sorcerer'
+
+" set color schemell of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+
+" Ignore these directories in ctrlp
+set wildignore+=*/out/**
+set wildignore+=*/vendor/**
+
+" close vim if Nerdtree is the last one opened
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " use xxx.vim color scheme in ~/.vim/colors/
-color jellybeans
+color sorcerer
+
 
 " show the current line
 set cursorline

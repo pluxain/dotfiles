@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rking/ag.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'xsbeats/vim-blade'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'
@@ -29,12 +30,21 @@ filetype plugin indent on    " required
 set wildignore+=*/out/**
 set wildignore+=*/vendor/**
 
+" Removes trailing spaces
+function TrimTrailingWhiteSpaces()
+    %s/\s\+$//e
+"     ''
+:endfunction
+
 " close vim if Nerdtree is the last one opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " use xxx.vim color scheme in ~/.vim/colors/
 colorscheme sorcerer
 
+
+let NERDTreeShowHidden=1
+let g:ctrlp_show_hidden = 1
 
 " show the current line
 set cursorline
@@ -94,6 +104,13 @@ if has("autocmd")
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+    " Remove trailing spaces
+    autocmd FileWritePre * :call TrimTrailingWhiteSpaces()
+    autocmd FileAppendPre * :call TrimTrailingWhiteSpaces()
+    autocmd FilterWritePre * :call TrimTrailingWhiteSpaces()
+    autocmd BufWritePre * :call TrimTrailingWhiteSpaces()
+
 endif
 
 " Adding mappings

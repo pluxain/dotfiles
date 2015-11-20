@@ -33,7 +33,6 @@ filetype plugin indent on    " required
 
 " Ignore these directories in ctrlp
 set wildignore+=*/out/**
-set wildignore+=*/vendor/**
 
 " Removes trailing spaces
 function TrimTrailingWhiteSpaces()
@@ -51,6 +50,9 @@ LuciusDarkLowContrast
 
 let NERDTreeShowHidden=1
 let g:ctrlp_show_hidden = 1
+
+" set fixers for php-cs-fixer
+let g:php_cs_fixer_fixers_list = "-psr0"
 
 " show the current line
 set cursorline

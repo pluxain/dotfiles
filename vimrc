@@ -24,6 +24,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'
+Plugin 'jonathanfilip/vim-lucius'
 
 " set color schemell of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,7 +45,8 @@ function TrimTrailingWhiteSpaces()
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " use xxx.vim color scheme in ~/.vim/colors/
-colorscheme sorcerer
+colorscheme lucius
+LuciusDarkLowContrast
 
 
 let NERDTreeShowHidden=1

@@ -1,3 +1,4 @@
+let mapleader = ','
 " Disable / Unmap arrow keys in normal mode !
 no <Up> ddkP
 no <Down> ddp
@@ -25,7 +26,5 @@ vno <Right> <Nop>
 map <C-n> :NERDTreeToggle<CR>
 " indent file
 no <C-l> gg=G
-" Insert a blank line above the current line in normal mode
-" no <C-Up> O<Esc>
-" Insert a blank line below the current line in normal mode
-" no <C-Down> o<Esc>
+" save file and then class PhpCsFixerFix for File
+nnoremap <silent><leader>pcf :w \| :call PhpCsFixerFixFile()<CR>

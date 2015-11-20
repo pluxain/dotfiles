@@ -17,6 +17,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rking/ag.vim'
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'xsbeats/vim-blade'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'

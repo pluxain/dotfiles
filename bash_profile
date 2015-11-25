@@ -1,6 +1,7 @@
 # Some basic aliases to list files and colorize the output
 alias ls='ls -G'
 alias ll='ls -lhGa'
+alias kahlan='vendor/bin/kahlan'
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then

@@ -40,8 +40,6 @@ function TrimTrailingWhiteSpaces()
 "     ''
 :endfunction
 
-" close vim if Nerdtree is the last one opened
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " use xxx.vim color scheme in ~/.vim/colors/
 colorscheme lucius
@@ -97,6 +95,9 @@ set autoindent
 
 " set local settings for tab and so using autocmd
 if has("autocmd")
+
+    " close vim if Nerdtree is the last one opened
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     " Enable file type detection
     filetype on

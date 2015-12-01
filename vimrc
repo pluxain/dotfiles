@@ -20,7 +20,8 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'

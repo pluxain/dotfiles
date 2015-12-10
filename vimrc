@@ -34,6 +34,8 @@ filetype plugin indent on    " required
 
 " Ignore these directories in ctrlp
 set wildignore+=*/out/**
+set wildignore+=*/vendor/**
+set wildignore+=*/migrations/**
 
 " Removes trailing spaces
 function TrimTrailingWhiteSpaces()
@@ -114,6 +116,8 @@ if has("autocmd")
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml
+    " twig php template engine as jinja
+    autocmd BufNewFile,BufRead *.twig set syntax=htmldjango
 
     " Remove trailing spaces
     autocmd FileWritePre * :call TrimTrailingWhiteSpaces()

@@ -42,95 +42,103 @@ set wildignore+=*/node_modules/**
 " Removes trailing spaces
 function! TrimTrailingWhiteSpaces()
     %s/\s\+$//e
-"     ''
-:endfunction
+    "     ''
+    :endfunction
 
 
-" use xxx.vim color scheme in ~/.vim/colors/
-colorscheme lucius
-LuciusDarkLowContrast
+    " use xxx.vim color scheme in ~/.vim/colors/
+    colorscheme lucius
+    LuciusDarkLowContrast
 
 
-let NERDTreeShowHidden=1
-let g:ctrlp_show_hidden = 1
+    let NERDTreeShowHidden=1
+    let g:ctrlp_show_hidden = 1
 
-" set fixers for php-cs-fixer
-let g:php_cs_fixer_fixers_list = "-psr0"
+    " set fixers for php-cs-fixer
+    let g:php_cs_fixer_fixers_list = "-psr0"
 
-" show the current line
-set cursorline
+    " show the current line
+    set cursorline
 
-" set incremental search => starts searching while typing
-set incsearch
+    " set incremental search => starts searching while typing
+    set incsearch
 
-" do highlight words when searching for them. it's distracting.
-" set hlsearch
+    " do highlight words when searching for them. it's distracting.
+    " set hlsearch
 
-" automatically show matching brackets. works like it does in bbedit.
-set showmatch
+    " automatically show matching brackets. works like it does in bbedit.
+    set showmatch
 
-" show commands typed if several keys
-set showcmd
+    " show commands typed if several keys
+    set showcmd
 
-" show l/C informations on the right bottom of widow
-set ruler
+    " show l/C informations on the right bottom of widow
+    set ruler
 
-" show status line
-set laststatus=2
+    " show status line
+    set laststatus=2
 
-" turn syntax hightlighting on by default
-syntax enable
+    " turn syntax hightlighting on by default
+    syntax enable
 
-" make that backspace key work the way it should
-set backspace=indent,eol,start
+    " make that backspace key work the way it should
+    set backspace=indent,eol,start
 
-" do NOT put a carriage return at the end of the last line! if you are programming
-" for the web the default will cause http headers to be sent. that's bad.
-set binary noeol
+    " do NOT put a carriage return at the end of the last line! if you are programming
+    " for the web the default will cause http headers to be sent. that's bad.
+    set binary noeol
 
-" set line numbers
-set nu
+    " set line numbers
+    set nu
 
-set list listchars=tab:▸\ ,trail:•,eol:¬
-" set some unprintable characters to visual characters
+    set list listchars=tab:▸\ ,trail:•,eol:¬
+    " set some unprintable characters to visual characters
 
-set tabstop=4 " real tabs should be 8, and they will show with set list onset tabstop=4
-set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
-set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-set expandtab " no real tabs please!
-set smartindent
-set autoindent
+    set tabstop=4 " real tabs should be 8, and they will show with set list onset tabstop=4
+    set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
+    set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
+    set expandtab " no real tabs please!
+    set smartindent
+    set autoindent
 
-" set local settings for tab and so using autocmd
-if has("autocmd")
+    " set local settings for tab and so using autocmd
+    if has("autocmd")
 
-    " close vim if Nerdtree is the last one opened
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+        " close vim if Nerdtree is the last one opened
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-    " Enable file type detection
-    filetype on
+        " Enable file type detection
+        filetype on
 
-    " Syntax of these languages is fussy over tabs Vs Spaces
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+        " Syntax of these languages is fussy over tabs Vs Spaces
+        autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+        autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-    " Customisations based on house-style (arbitrary)
-    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+        " Customisations based on house-style (arbitrary)
+        autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+        autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+        autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
 
-    " Treat .rss files as xml
-    autocmd BufNewFile,BufRead *.rss setfiletype xml
-    " twig php template engine as jinja
-    autocmd BufNewFile,BufRead *.twig set syntax=htmldjango
+        " Treat .rss files as xml
+        autocmd BufNewFile,BufRead *.rss setfiletype xml
+        " twig php template engine as jinja
+        autocmd BufNewFile,BufRead *.twig set syntax=htmldjango
 
-    " Remove trailing spaces
-    autocmd FileWritePre * :call TrimTrailingWhiteSpaces()
-    autocmd FileAppendPre * :call TrimTrailingWhiteSpaces()
-    autocmd FilterWritePre * :call TrimTrailingWhiteSpaces()
-    autocmd BufWritePre * :call TrimTrailingWhiteSpaces()
+        " Remove trailing spaces
+        autocmd FileWritePre * :call TrimTrailingWhiteSpaces()
+        autocmd FileAppendPre * :call TrimTrailingWhiteSpaces()
+        autocmd FilterWritePre * :call TrimTrailingWhiteSpaces()
+        autocmd BufWritePre * :call TrimTrailingWhiteSpaces()
 
-endif
+        " search for a template on file creation matching the extension
+        augroup templates
+            au!
+            " read in templates files
+            autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+        augroup END
 
-" Adding mappings
-source ~/.vim/mappings.vim
+    endif
+
+    " Adding mappings
+    source ~/.vim/mappings.vim
+    source ~/.vim/abbreviations.vim

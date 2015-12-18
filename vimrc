@@ -22,6 +22,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'
@@ -36,9 +37,10 @@ filetype plugin indent on    " required
 set wildignore+=*/out/**
 set wildignore+=*/vendor/**
 set wildignore+=*/migrations/**
+set wildignore+=*/node_modules/**
 
 " Removes trailing spaces
-function TrimTrailingWhiteSpaces()
+function! TrimTrailingWhiteSpaces()
     %s/\s\+$//e
 "     ''
 :endfunction
@@ -72,6 +74,9 @@ set showcmd
 
 " show l/C informations on the right bottom of widow
 set ruler
+
+" show status line
+set laststatus=2
 
 " turn syntax hightlighting on by default
 syntax enable
@@ -112,7 +117,7 @@ if has("autocmd")
     " Customisations based on house-style (arbitrary)
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml

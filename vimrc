@@ -23,6 +23,7 @@ Plugin 'tpope/vim-repeat'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
+Plugin 'slim-template/vim-slim'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'

@@ -2,6 +2,7 @@
 alias ls='ls -G'
 alias ll='ls -lhGa'
 alias kahlan='vendor/bin/kahlan --ff=1';
+alias phpunit='vendor/bin/phpunit --colors tests';
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then

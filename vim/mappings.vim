@@ -7,11 +7,17 @@ no <Left> <Nop>
 " save file automatically
 no <Esc><Esc> :w<CR>
 
+" insert new line after in normal mode
+no oo o<Esc>
+" insert new line before in normal mode
+no OO O<Esc>
+
 " Disable / Unmap arrow keys in insert mode !
 ino <Up> <Nop>
 ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
+
 " save file automatically
 ino <Esc><Esc> <Esc>:w<CR>
 

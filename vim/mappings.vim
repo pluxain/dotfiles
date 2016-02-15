@@ -8,9 +8,9 @@ no <Left> <Nop>
 no <Esc><Esc> :w<CR>
 
 " insert new line after in normal mode
-no oo o<Esc>
+no <Leader>o o<Esc>
 " insert new line before in normal mode
-no OO O<Esc>
+no <Leader>O O<Esc>
 
 " Disable / Unmap arrow keys in insert mode !
 ino <Up> <Nop>

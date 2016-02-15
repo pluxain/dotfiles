@@ -47,8 +47,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # export PATH=/$HOME/.rvm/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Android\ Studio.app/sdk/platform-tools:/usr/local/mysql/bin:$PATH
 
-source ~/.bash_profile
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+source ~/.bash_profile
 
 # OPAM configuration
 . /Users/pln/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

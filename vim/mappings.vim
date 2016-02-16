@@ -34,3 +34,6 @@ map <C-n> :NERDTreeToggle<CR>
 no <C-l> gg=G
 " save file and then class PhpCsFixerFix for File
 nnoremap <silent><leader>pcf :w \| :call PhpCsFixerFixFile()<CR>
+
+"replace the current word in all opened buffers
+map <leader>r :call Replace()<CR>

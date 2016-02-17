@@ -108,6 +108,8 @@ set splitright " open vertival split on the right of the current one
 
 
 
+"-----MISCS-------
+set formatoptions-=cro " disable automatic insertion of comment on new line after a comment line
 " make that backspace key work the way it should
 set backspace=indent,eol,start
 

@@ -34,12 +34,6 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 
-" Ignore these directories in ctrlp
-set wildignore+=*/out/**
-set wildignore+=*/vendor/**
-set wildignore+=*/migrations/**
-set wildignore+=*/node_modules/**
-
 "---FUNCTIONS--------
 " Removes trailing spaces
 function! TrimTrailingWhiteSpaces()
@@ -55,53 +49,47 @@ function! Replace()
     :unlet! s:word
 endfunction
 
+
+
+
+"------ASPECT-----------------
 " use xxx.vim color scheme in ~/.vim/colors/
 colorscheme lucius
 LuciusDarkLowContrast
+set cursorline " show the current line
+set showcmd " show commands typed if several keys
+set ruler " show l/c informations on the right bottom of widow
+set laststatus=2 " show status line
+set nu " set line numbers
 
 
+
+
+"---------SEARCH-----------
+set incsearch " set incremental search => starts searching while typing
+
+" set hlsearch " do highlight words when searching for them. it's distracting.
+
+set showmatch " automatically show matching brackets. works like it does in bbedit.
+
+
+
+
+"-----PLUGINS-----
 let NERDTreeShowHidden=1
-let g:ctrlp_show_hidden = 1
+let g:php_cs_fixer_fixers_list = "-psr0" " set fixers for php-cs-fixer
+let g:ctrlp_show_hidden = 1 " show hidden files in ctrlp
+" Ignore these directories in ctrlp
+set wildignore+=*/out/**
+set wildignore+=*/vendor/**
+set wildignore+=*/migrations/**
+set wildignore+=*/node_modules/**
 
-" set fixers for php-cs-fixer
-let g:php_cs_fixer_fixers_list = "-psr0"
 
-" show the current line
-set cursorline
 
-" set incremental search => starts searching while typing
-set incsearch
 
-" do highlight words when searching for them. it's distracting.
-" set hlsearch
-
-" automatically show matching brackets. works like it does in bbedit.
-set showmatch
-
-" show commands typed if several keys
-set showcmd
-
-" show l/c informations on the right bottom of widow
-set ruler
-
-" show status line
-set laststatus=2
-
-" turn syntax hightlighting on by default
-syntax enable
-
-" make that backspace key work the way it should
-set backspace=indent,eol,start
-
-" do NOT put a carriage return at the end of the last line! if you are programming
-" for the web the default will cause http headers to be sent. that's bad.
-set binary noeol
-
-" set line numbers
-set nu
-
-set list listchars=tab:▸\ ,trail:•,eol:¬
-" set some unprintable characters to visual characters
+"------SYNTAX---------
+syntax enable " turn syntax hightlighting on by default
 
 set tabstop=4 " real tabs should be 8, and they will show with set list onset tabstop=4
 set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
@@ -110,6 +98,30 @@ set expandtab " no real tabs please!
 set smartindent
 set autoindent
 
+
+
+
+"-----SPLITS------
+set splitbelow " open horizontal split below the current one
+set splitright " open vertival split on the right of the current one
+
+
+
+
+" make that backspace key work the way it should
+set backspace=indent,eol,start
+
+" do NOT put a carriage return at the end of the last line! if you are programming
+" for the web the default will cause http headers to be sent. that's bad.
+set binary noeol
+
+set list listchars=tab:▸\ ,trail:•,eol:¬
+" set some unprintable characters to visual characters
+
+
+
+
+"-------AUTOCMD--------------
 " set local settings for tab and so using autocmd
 if has("autocmd")
 

@@ -29,11 +29,24 @@ vno <Right> <Nop>
 
 " Custom mapping
 " toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-" indent file
-no <C-l> gg=G
+nmap <C-n> :NERDTreeToggle<CR>
+
+no <C-l> gg=G " indent file
+
 " save file and then class PhpCsFixerFix for File
-nnoremap <silent><leader>pcf :w \| :call PhpCsFixerFixFile()<CR>
+nnoremap <Silent><Leader>pcf :w \| :call PhpCsFixerFixFile()<CR>
 
 "replace the current word in all opened buffers
-map <leader>r :call Replace()<CR>
+nmap <Leader>r :call Replace()<CR>
+
+" splits navigation easier
+nmap <Leader>h <C-w><C-h>
+nmap <Leader>j <C-w><C-j>
+nmap <Leader>k <C-w><C-k>
+nmap <Leader>l <C-w><C-l>
+nmap <Leader>= <C-w>=
+nmap <Leader>\| <C-w>\|
+
+" buffers navigation
+nmap <Leader>n :bn<CR>
+nmap <Leader>N :bp<CR>

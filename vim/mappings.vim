@@ -46,6 +46,8 @@ nmap <Leader>k <C-w><C-k>
 nmap <Leader>l <C-w><C-l>
 nmap <Leader>= <C-w>=
 nmap <Leader>\| <C-w>\|
+nmap <Leader><Left> <C-w><C-h><C-w>\| " shift to left split and maximise it
+nmap <Leader><Right> <C-w><C-l><C-w>\| " shift to right split and maximise it
 
 " buffers navigation
 nmap <Leader>n :bn<CR>

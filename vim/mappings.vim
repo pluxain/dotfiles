@@ -33,9 +33,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 no <C-l> gg=G " indent file
 
-" save file and then class PhpCsFixerFix for File
-nnoremap <Silent><Leader>pcf :w \| :call PhpCsFixerFixFile()<CR>
-
 "replace the current word in all opened buffers
 nmap <Leader>r :call Replace()<CR>
 
@@ -52,3 +49,9 @@ nmap <Leader><Right> <C-w><C-l><C-w>\| " shift to right split and maximise it
 " buffers navigation
 nmap <Leader>n :bn<CR>
 nmap <Leader>N :bp<CR>
+
+"-----PROGRAMMING-----
+" save file and then class PhpCsFixerFix for File
+nnoremap <Silent><Leader>pcf :w \| :call PhpCsFixerFixFile()<CR>
+" execute current file in ruby
+nmap <Leader>er :! ruby %<Enter>

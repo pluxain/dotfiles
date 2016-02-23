@@ -127,6 +127,9 @@ set list listchars=tab:▸\ ,trail:•,eol:¬
 " set local settings for tab and so using autocmd
 if has("autocmd")
 
+	" disable automatic comment on new line after a comment line
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
     " source vimrc file on save
     augroup autosourcing
         autocmd!
@@ -147,6 +150,7 @@ if has("autocmd")
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+	autocmd FileType ruby setlocal ts=4 sts=2 sw=2 expandtab
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml

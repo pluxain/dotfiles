@@ -43,11 +43,18 @@ endfunction
 "---------------------------------------------------------------------------
 "" Tip #382: Search for <cword> and replace with input() in all open buffers
 "---------------------------------------------------------------------------
-function! Replace()
-    let s:word = input("Replace " . expand('<cword>') . " with: ")
+function! ReplaceInCurrent()
+    let s:word = input("Replace " . expand('<cword>') . " with in current buffer: ")
+    :exe '%s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+    :unlet! s:word
+endfunction
+
+function! ReplaceInBuffers()
+    let s:word = input("Replace " . expand('<cword>') . " with in all opened buffers: ")
     :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
     :unlet! s:word
 endfunction
+
 
 
 
@@ -127,8 +134,8 @@ set list listchars=tab:▸\ ,trail:•,eol:¬
 " set local settings for tab and so using autocmd
 if has("autocmd")
 
-	" disable automatic comment on new line after a comment line
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    " disable automatic comment on new line after a comment line
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
     " source vimrc file on save
     augroup autosourcing
@@ -143,14 +150,15 @@ if has("autocmd")
     filetype on
 
     " Syntax of these languages is fussy over tabs Vs Spaces
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+    autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
     " Customisations based on house-style (arbitrary)
-    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-	autocmd FileType ruby setlocal ts=4 sts=2 sw=2 expandtab
+    autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType javascript setlocal tabstop=4 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType ruby setlocal tabstop=4 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml

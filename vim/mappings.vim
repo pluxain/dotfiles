@@ -8,9 +8,9 @@ no <Left> <Nop>
 no <Esc><Esc> :w<CR>
 
 " insert new line after in normal mode
-no <Leader>o o<Esc>
+no <Leader>o o<Esc> :w<CR>
 " insert new line before in normal mode
-no <Leader>O O<Esc>
+no <Leader>O O<Esc> :w<CR>
 
 " Disable / Unmap arrow keys in insert mode !
 ino <Up> <Nop>
@@ -32,9 +32,11 @@ vno <Right> <Nop>
 nmap <C-n> :NERDTreeToggle<CR>
 
 no <C-l> gg=G " indent file
+no <Leader>< ^d0 " trim left
 
 "replace the current word in all opened buffers
-nmap <Leader>r :call Replace()<CR>
+nmap <Leader>r :call ReplaceInCurrent()<CR>
+nmap <Leader>ra :call ReplaceInBuffers()<CR>
 
 " splits navigation easier
 nmap <Leader>h <C-w><C-h>

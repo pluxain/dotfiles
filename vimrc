@@ -24,6 +24,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'
@@ -150,15 +152,16 @@ if has("autocmd")
     filetype on
 
     " Syntax of these languages is fussy over tabs Vs Spaces
-    autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
-    autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
     " Customisations based on house-style (arbitrary)
-    autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType javascript setlocal tabstop=4 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType ruby setlocal tabstop=4 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript setlocal ts=4 sts=2 sw=2 expandtab
+    autocmd FileType json setlocal ts=4 sts=2 sw=2 expandtab
+    autocmd FileType ruby setlocal ts=4 sts=2 sw=2 expandtab
+    autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 
     " Treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml

@@ -33,6 +33,9 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 no <C-l> gg=G " indent file
 no <Leader>< ^d0 " trim left
+no <Leader>J i<CR><Esc><bar>:w<CR>j " insert a break line at cursor position and save
+no <Leader>" i"<Esc>:w<CR>
+no <Leader>' i'<Esc>:w<CR>
 
 "replace the current word in all opened buffers
 nmap <Leader>r :call ReplaceInCurrent()<CR>
@@ -51,6 +54,9 @@ nmap <Leader><Right> <C-w><C-l><C-w>\| " shift to right split and maximise it
 " buffers navigation
 nmap <Leader>n :bn<CR>
 nmap <Leader>N :bp<CR>
+
+" closing current buffer withour quitting VIM
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "-----PROGRAMMING-----
 " save file and then class PhpCsFixerFix for File

@@ -4,6 +4,8 @@ alias ll='ls -lhGa'
 alias kahlan='vendor/bin/kahlan --ff=1'
 alias phpunit='vendor/bin/phpunit --colors tests'
 alias nanoc='bundle exec nanoc'
+# Use grep with color highligt of results, line numbers, and Extended regular expressions
+alias grep='grep -n --color -E'
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
@@ -26,10 +28,21 @@ fi
 # Add Composer global dependencies (Laravel) to path
 export PATH=${PATH}:~/.composer/vendor/bin
 
-export YAKAMAILER_ENVIRONMENT=development
+# Add Android Sdk path
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
+# export YAKAMAILER_ENVIRONMENT=development
+
+# Java 1.7
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
+# Java 1.8
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
 
 # rbenv
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# yarn
+export PATH="$PATH:`yarn global bin`"

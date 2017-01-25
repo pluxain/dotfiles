@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rking/ag.vim'
+Plugin 'mattn/emmet-vim' " Add Emmet support to Vim
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'xsbeats/vim-blade'
 Plugin 'tpope/vim-surround'
@@ -24,8 +25,12 @@ Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript' " needed by vim-jsx
+Plugin 'mxw/vim-jsx' " support for JSX : React Javascript
+" Plugin 'wavded/vim-stylus' " support for Stylus
+" Plugin 'darthmall/vim-vue' " support for Vue components
+" Plugin 'posva/vim-vue' " support for Vue components
+Plugin 'leafgarland/typescript-vim' " syntax highlighting for TypeScript
 
 " Color schemes
 Plugin 'adlawson/vim-sorcerer'
@@ -90,8 +95,7 @@ let g:php_cs_fixer_fixers_list = "-psr0" " set fixers for php-cs-fixer
 let g:ctrlp_show_hidden = 1 " show hidden files in ctrlp
 " Ignore these directories in ctrlp
 set wildignore+=*/out/**
-set wildignore+=*/vendor/**
-set wildignore+=*/migrations/**
+" set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
 
 
@@ -152,18 +156,27 @@ if has("autocmd")
     filetype on
 
     " Syntax of these languages is fussy over tabs Vs Spaces
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    " autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType markdown setlocal ts=2 sts=2 sw=2 expandtab
 
     " Customisations based on house-style (arbitrary)
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType xsd setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType twig setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType blade setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType slim setlocal ts=2 sts=2 sw=2 expandtab
+    " autocmd FileType stylus setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=4 sts=2 sw=2 expandtab
+    " autocmd FileType vue setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType json setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType ruby setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 
-    " Treat .rss files as xml
+    " treat .rss files as xml
     autocmd BufNewFile,BufRead *.rss setfiletype xml
     " twig php template engine as jinja
     autocmd BufNewFile,BufRead *.twig set syntax=htmldjango
@@ -175,11 +188,11 @@ if has("autocmd")
     autocmd BufWritePre * :call TrimTrailingWhiteSpaces()
 
     " search for a template on file creation matching the extension
-    augroup templates
-        autocmd!
+    " augroup templates
+        " autocmd!
         " read in templates files
-        autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
-    augroup END
+        " autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+    " augroup END
 
 endif
 

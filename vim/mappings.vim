@@ -11,6 +11,8 @@ no <Esc><Esc> :w<CR>
 no <Leader>o o<Esc> :w<CR>
 " insert new line before in normal mode
 no <Leader>O O<Esc> :w<CR>
+" switch case with an easier keyboard combination
+no <S-U> ~
 
 " Disable / Unmap arrow keys in insert mode !
 ino <Up> <Nop>
@@ -56,7 +58,7 @@ nmap <Leader>n :bn<CR>
 nmap <Leader>N :bp<CR>
 
 " closing current buffer withour quitting VIM
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <Leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "-----PROGRAMMING-----
 " save file and then class PhpCsFixerFix for File

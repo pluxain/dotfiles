@@ -21,7 +21,7 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'slim-template/vim-slim'
@@ -95,9 +95,11 @@ let g:php_cs_fixer_fixers_list = "-psr0" " set fixers for php-cs-fixer
 let g:ctrlp_show_hidden = 1 " show hidden files in ctrlp
 " Ignore these directories in ctrlp
 set wildignore+=*/out/**
+set wildignore+=*/build/**
 " set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
-
+" vim-jsx to work on .js extension as well
+let g:jsx_ext_required = 0
 
 
 

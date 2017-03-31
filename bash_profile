@@ -6,6 +6,7 @@ alias phpunit='vendor/bin/phpunit --colors tests'
 alias nanoc='bundle exec nanoc'
 # Use grep with color highligt of results, line numbers, and Extended regular expressions
 alias grep='grep -n --color -E'
+alias rn='react-native'
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then

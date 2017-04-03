@@ -7,6 +7,7 @@ alias nanoc='bundle exec nanoc'
 # Use grep with color highligt of results, line numbers, and Extended regular expressions
 alias grep='grep -n --color -E'
 alias rn='react-native'
+alias tmux='tmux -2'
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then

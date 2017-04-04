@@ -48,3 +48,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # yarn
 export PATH="$PATH:`yarn global bin`"
+
+# custom scripts (tmux, etc.)
+export PATH="$PATH:~/dotfiles/scripts"

@@ -41,14 +41,14 @@ tmux resize-pane -D 10
 # Launch the tests
 tmux send-keys "yarnpkg test" C-m
 
-# Create a horizontal pane in the sub-pane to run the server
+# Create a horizontal pane in the sub-pane for terminal prompt (yarn, git, etc.)
 tmux split-window -h
 tmux resize-pan -R 20
-tmux send-keys "yarnpkg start" C-m
 
-# Add a small pane under the server to have a terminal prompt (install dependencies, etc.)
+# Add a small pane under the prompt to run the server
 tmux split-window -v
-tmux resize-pane -D 5
+tmux resize-pane -U 4
+tmux send-keys "yarnpkg start" C-m
 
 # Select the vim `main` pane
 tmux select-pane -t 0

@@ -5,7 +5,34 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+# ZSH_THEME="ys"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Settings for powerlevel9k theme
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('root_indicator' 'context' 'dir' 'vcs')
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('time')
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%{%F{249}%}\u250f"
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%} "
+POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M - %d/%m/%y}"
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="214"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="black"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="012"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="012"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="red"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="214"
+POWERLEVEL9K_TIME_BACKGROUND="black"
+POWERLEVEL9K_TIME_FOREGROUND="214"
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='214'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=/$HOME/.rvm/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Android\ Studio.app/sdk/platform-tools:/usr/local/mysql/bin:$PATH
 
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-source ~/.bash_profile
 
-# OPAM configuration
-. /Users/pln/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+source ~/.bash_profile

@@ -1,13 +1,12 @@
 # Some basic aliases to list files and colorize the output
-alias ls='ls -G'
-alias ll='ls -lhGa'
-alias kahlan='vendor/bin/kahlan --ff=1'
-alias phpunit='vendor/bin/phpunit --colors tests'
-alias nanoc='bundle exec nanoc'
-# Use grep with color highligt of results, line numbers, and Extended regular expressions
-alias grep='grep -n --color -E'
-alias rn='react-native'
-alias tmux='tmux -2'
+if [ -f ~/.bash_aliases ]; then
+	source ~/.bash_aliases
+fi
+
+# Function to launch scripts contained in ~/dotfiles/scripts which are basically aimed to launch tmux sessions for dev
+function launch() {
+	sh $1.sh $2;
+}
 
 # Including git-completion
 #if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
@@ -15,13 +14,18 @@ alias tmux='tmux -2'
 #fi
 
 # Including git-completion
-if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
-  source /usr/local/git/contrib/completion/git-prompt.sh
-fi
+# if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
+#   source /usr/local/git/contrib/completion/git-prompt.sh
+# fi
 
 # Including git-completion
-if [ -f /usr/local/git/contrib/completion/git-prompt.zsh ]; then
-  source /usr/local/git/contrib/completion/git-prompt.zsh
+# if [ -f /usr/local/git/contrib/completion/git-prompt.zsh ]; then
+#   source /usr/local/git/contrib/completion/git-prompt.zsh
+# fi
+
+# Use brew bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
 fi
 
 # Export prompt settings
@@ -34,8 +38,6 @@ export PATH=${PATH}:~/.composer/vendor/bin
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
-# export YAKAMAILER_ENVIRONMENT=development
 
 # Java 1.7
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home

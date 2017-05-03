@@ -28,8 +28,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'pangloss/vim-javascript' " needed by vim-jsx
 Plugin 'mxw/vim-jsx' " support for JSX : React Javascript
 " Plugin 'wavded/vim-stylus' " support for Stylus
-" Plugin 'darthmall/vim-vue' " support for Vue components
-" Plugin 'posva/vim-vue' " support for Vue components
+Plugin 'posva/vim-vue' " support for Vue components
 Plugin 'leafgarland/typescript-vim' " syntax highlighting for TypeScript
 
 " Color schemes
@@ -173,7 +172,7 @@ if has("autocmd")
     autocmd FileType slim setlocal ts=2 sts=2 sw=2 expandtab
     " autocmd FileType stylus setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=4 sts=2 sw=2 expandtab
-    " autocmd FileType vue setlocal ts=4 sts=2 sw=2 expandtab
+    autocmd FileType vue setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType json setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType ruby setlocal ts=4 sts=2 sw=2 expandtab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab

@@ -1,31 +1,24 @@
 #!/bin/bash
-REACT_NATIVE_ROOT="$HOME/Projects/javascript/react-native"
-PHP_ROOT="$HOME/Projects/php"
 PROJECT="Bootista"
-FRONT_PROJECT_ROOT="$REACT_NATIVE_ROOT/$PROJECT"
-PHP_PROJECT_ROOT="$PHP_ROOT/$PROJECT"
+PROJECT_ROOT="$HOME/Projects/$PROJECT"
+FRONT_PROJECT_ROOT="$PROJECT_ROOT/front-end"
+ADMIN_PROJECT_ROOT="$PROJECT_ROOT/admin"
 
-if [ ! -d "$REACT_NATIVE_ROOT" ]
+if [ ! -d "$PROJECT_ROOT" ]
 	then
-		echo "React Native root folder $REACT_NATIVE_ROOT does not exists"
-		exit -1
-fi
-
-if [ ! -d "$REACT_NATIVE_ROOT" ]
-	then
-		echo "PHP root folder $PHP_ROOT does not exists"
+		echo "$PROJECT project root folder $PROJECT_ROOT does not exists"
 		exit -1
 fi
 
 if [ ! -d "$FRONT_PROJECT_ROOT" ]
 	then
-		echo "Front Project root folder $FRONT_PROJECT does not exists"
+		echo "$PROJECT Front Project root folder $FRONT_PROJECT does not exists"
 		exit -1
 fi
 
-if [ ! -d "$PHP_PROJECT_ROOT" ]
+if [ ! -d "$ADMIN_PROJECT_ROOT" ]
 	then
-		echo "PHP Project root folder $PHP_PROJECT_ROOT does not exists"
+		echo "$PROJECT Admin Project root folder $PHP_PROJECT_ROOT does not exists"
 		exit -1
 fi
 
@@ -41,7 +34,7 @@ tmux rename-window -t $PROJECT:0 'Front'
 # API launch
 #------------
 
-cd "$PHP_PROJECT_ROOT"
+cd "$ADMIN_PROJECT_ROOT"
 # Create a new window for API
 tmux new-window -n 'API'
 # Select the API window to interact with it
@@ -56,7 +49,7 @@ tmux resize-pane -D 10
 tmux send-keys "vagrant up" C-m
 # SSH the Vagrant virtual machine
 tmux send-keys "vagrant ssh" C-m
-tmux send-keys "cd Bootista" C-m
+tmux send-keys "cd Bootista/admin" C-m
 
 #------------
 # Front launch

@@ -29,28 +29,33 @@ tmux new-session -d -s $PROJECT
 tmux rename-window -t $PROJECT:0 'dev'
 
 # Select the window to interact with it
-tmux select-window -t $PROJECT:0
+tmux select-window -t $PROJECT:'dev'
 
 # Launch Vim in the window
 tmux send-keys "vim" C-m
 
-# Create and resize a sub pane
-tmux split-window -v
-tmux resize-pane -D 10
+# Create and resize an horizontal pane for tests
+tmux split-window -h
+tmux resize-pane -R 25
 
 # Launch the tests
 tmux send-keys "yarnpkg test" C-m
 
-# Create a horizontal pane in the sub-pane for terminal prompt (yarn, git, etc.)
-tmux split-window -h
-tmux resize-pan -R 20
+# Create a new window for background activity
+# prompt (yarn, git, etc.)
+tmux new-window
+tmux rename-window -t $PROJECT:1 'server'
+tmux select-window -t $PROJECT:'server'
+
+# horizontal pane in the sub-pane for terminal prompt (yarn, git, etc.)
 
 # Add a small pane under the prompt to run the server
 tmux split-window -v
-tmux resize-pane -U 4
+tmux resize-pane -U 10
 tmux send-keys "yarnpkg start" C-m
 
 # Select the vim `main` pane
+tmux select-window -t $PROJECT:dev
 tmux select-pane -t 0
 
 # Get ready to go

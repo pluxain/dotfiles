@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim' " Add Emmet support to Vim
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'xsbeats/vim-blade'
@@ -37,6 +37,11 @@ Plugin 'jonathanfilip/vim-lucius'
 
 " set color schemell of your Plugins must be added before the following line
 call vundle#end()            " required
+
+" use ag instead of ack in ack.vim plugin
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 filetype plugin indent on    " required
 

@@ -43,8 +43,8 @@ tmux select-window -t $PROJECT:1
 tmux send-keys "vim" C-m
 
 # Create and resize a sub pane
-tmux split-window -v
-tmux resize-pane -D 10
+tmux split-window -h
+tmux resize-pane -R 25
 # Launch the Vagrant
 tmux send-keys "vagrant up" C-m
 # SSH the Vagrant virtual machine

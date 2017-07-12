@@ -51,6 +51,9 @@ tmux send-keys "vagrant up" C-m
 tmux send-keys "vagrant ssh" C-m
 tmux send-keys "cd Bootista/admin" C-m
 
+# select the vim pane
+tmux select-pane -t 0
+
 #------------
 # Front launch
 #------------
